@@ -1,0 +1,601 @@
+  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
+
+  * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      scroll-padding-top: 3.5rem;
+  }
+
+
+  :root {
+      --Soft-red: hsl(7, 99%, 70%);
+      --Yellow: hsl(51, 100%, 49%);
+      --Orange: hsl(34, 100%, 50%);
+      --Dark-desaturated-cyan: hsl(167, 40%, 24%);
+      /* (graphic design text)*/
+      --Dark-blue: hsl(198, 62%, 26%);
+      /* (photography text)*/
+      --Dark-moderate-cyan: hsl(168, 34%, 41%);
+      /* (footer)*/
+      --light-cyan: hsl(167, 44%, 70%);
+      --nav-bg: hsl(200, 100%, 62%);
+
+      --Very-dark-desaturated-blue: hsl(212, 27%, 19%);
+      --Very-dark-grayish-blue: hsl(213, 9%, 39%);
+      --Dark-grayish-blue: hsl(232, 10%, 55%);
+      --Grayish-blue: hsl(210, 4%, 67%);
+      --White: hsl(0, 0%, 100%);
+      --semi-transparent-white: hsla(0, 0%, 100%, 0.35);
+      --semi-transparent-Yellow: hsla(51, 100%, 49%, 0.45);
+
+
+      --fw-regular: 600;
+      --fw-medium: 700;
+      --fw-bold: 900;
+      --ff-title: 'Fraunces', serif;
+      --ff-body: 'Barlow', sans-serif;
+
+
+  }
+
+  html {
+      font-size: 18px;
+      font-weight: var(--fw-regular);
+      color: var(--Very-dark-grayish-blue);
+      font-family: var(--ff-body);
+  }
+
+  header {
+      position: relative;
+      min-width: 100vw;
+      min-width: 100dvw;
+  }
+
+  picture img {
+      display: block;
+      margin: 0;
+      width: 100%;
+  }
+
+  #menu-toggler {
+      display: none;
+  }
+
+  #menu-toggler:hover {
+      cursor: pointer;
+  }
+
+  header nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      background-color: var(--nav-bg);
+      z-index: 999;
+  }
+
+  ul li {
+      list-style: none;
+  }
+
+  nav .nav-brand-link {
+      display: inline-block;
+      margin-right: auto;
+  }
+  .nav-bar-menu.active,
+  .nav-bar-menu {
+      display: flex;
+  }
+
+  .nav-link {
+      display: inline-block;
+      padding: .75rem 1.15rem;
+      color: var(--White);
+      text-decoration: none;
+      font-family: var(--ff-title);
+      font-weight: var(--fw-regular);
+  }
+
+
+  .nav-link.special {
+      background-color: var(--White);
+      border-radius: 2rem;
+      color: var(--Very-dark-desaturated-blue);
+      text-transform: uppercase;
+  }
+
+  .nav-link.special:hover {
+      color: var(--White);
+      background-color: var(--semi-transparent-white);
+  }
+
+  @media only screen and (max-width: 376px) {
+    header nav {
+        padding: 1rem 8%;
+
+    }
+      #menu-toggler {
+          display: block;
+          cursor: pointer;
+      }
+
+      .nav-bar-menu {
+          display: none;
+      }
+
+      header .nav-bar-menu.active {
+          position: fixed;
+          display: flex;
+          flex-direction: column;
+          gap: .75rem;
+          padding: 1.5rem 0 2.5rem;
+          top: 5rem;
+          left: 8%;
+          width: 84%;
+          background-color: var(--White);
+      }
+      .nav-bar-menu.active::before{
+        position: absolute;
+        top: -28px;
+        right: 0;
+        content: '';
+        width: 0;
+        height: 0;
+        border-width: 0 0px 28px 28px;
+        border-color: transparent transparent var(--White) transparent;
+        border-style: solid;
+
+      }
+
+      .nav-bar-menu li {
+          text-align: center;
+      }
+
+      nav .nav-brand-link {
+          display: inline-block;
+          margin-right: auto;
+      }
+
+      .nav-link {
+          display: inline-block;
+          color: var(--Dark-desaturated-cyan);
+      }
+
+      .nav-link.special {
+          background-color: var(--Yellow);
+
+      }
+
+      .nav-link.special:hover {
+          color: var(--Dark-desaturated-cyan);
+          background-color: var(--semi-transparent-Yellow);
+      }
+  }
+
+  #main-title {
+      position: absolute;
+      width: 100%;
+      top: 23%;
+      color: var(--White);
+      font-family: var(--ff-title);
+      font-size: clamp(2.7rem, 6vw, 4rem);
+      font-weight: var(--fw-bold);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+  }
+
+  #down-arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -25%;
+  }
+
+  #About {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .description {
+      padding: 20%;
+      display: flex;
+      flex-direction: column;
+      gap: 10%;
+      justify-content: space-around;
+  }
+
+  h2 {
+      font-family: var(--ff-title);
+      font-weight: var(--fw-medium);
+  }
+
+  .description h2,
+  #Contact h2 {
+      font-size: 2.4rem;
+      color: var(--Very-dark-desaturated-blue);
+  }
+
+  .description p {
+      line-height: 1.5lh;
+  }
+
+  .description .learn-more {
+      display: inline-block;
+      padding: 4px;
+      width: max-content;
+      position: relative;
+      color: var(--Very-dark-desaturated-blue);
+      text-decoration: none;
+      font-family: var(--ff-title);
+      text-transform: uppercase;
+      font-weight: var(--fw-bold);
+      letter-spacing: 1px;
+  }
+
+  .learn-more:hover::after {
+      content: "";
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      right: 0;
+      height: .5rem;
+      z-index: -1;
+  }
+
+  .transform:hover::after {
+      background-color: var(--Yellow);
+  }
+
+  .learn-more.stand-out:hover::after {
+      background-color: var(--Soft-red);
+  }
+
+  #Services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+
+  .graphic {
+      grid-column: 1 /1;
+      grid-row: 1/1;
+      color: var(--Dark-desaturated-cyan);
+  }
+
+  .photography {
+      grid-column: 2/2;
+      grid-row: 1/1;
+      color: var(--Dark-blue);
+  }
+
+  article.text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 2rem;
+      text-align: center;
+      padding: 10% 24%;
+  }
+
+  #Projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 3%;
+      padding: 10vh 13vw;
+      text-align: center;
+  }
+
+  #Projects h2 {
+      grid-column: 1 / 4;
+      vertical-align: middle;
+      letter-spacing: 4px;
+      font-size: 1rem;
+      line-height: 2rem;
+      text-transform: uppercase;
+      margin-block: 3rem;
+      font-weight: var(--fw-medium);
+  }
+
+  #Projects img {
+      border-radius: 50%;
+      width: 3.5rem;
+      margin: 1rem auto;
+  }
+
+  #Projects p {
+      margin: 3rem 0;
+  }
+
+  #Projects .author {
+      font-weight: var(--fw-bold);
+      font-family: var(--ff-title);
+      display: block;
+      margin-block: 1rem;
+  }
+
+  #Projects .ocupation {
+      color: var(--Grayish-blue);
+      font-size: .8rem;
+  }
+
+  #gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+  }
+
+  #Contact {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+      padding: 15vh 20vw 5vh;
+      text-align: center;
+      background-color: var(--light-cyan);
+      color: var(--Very-dark-desaturated-blue);
+      color: var(--Dark-desaturated-cyan);
+  }
+
+  #Contact h2 {
+      text-align: right;
+      padding-block: 2rem;
+      color: var(--Dark-desaturated-cyan);
+  }
+
+  #Contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      gap: 1.75rem;
+  }
+
+  #Contact [type="email"] {
+      min-width: 100%;
+      margin-top: .5rem;
+      font-family: var(--ff-body);
+      padding: .5rem;
+      font-weight: var(--fw-regular);
+  }
+
+  label {
+      display: block;
+      text-align: left;
+  }
+
+  [type="checkbox"] {
+      aspect-ratio: 1/1;
+      width: 1.1rem;
+      margin-right: .5rem;
+      accent-color: var(--Yellow);
+  }
+
+  [type="submit"] {
+      display: inline-block;
+      padding: .75rem 1.15rem;
+      background-color: var(--Yellow);
+      color: var(--Very-dark-desaturated-blue);
+      font-family: var(--ff-title);
+      font-weight: var(--fw-regular);
+      border-radius: 2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      outline: none;
+      border: none;
+      transition: .2s ease;
+  }
+
+  [type="submit"]:hover {
+      background-color: var(--semi-transparent-Yellow);
+      color: var(--Dark-blue);
+
+  }
+
+  small {
+      color: var(--Very-dark-grayish-blue);
+  }
+
+  footer {
+      display: grid;
+      grid-template-rows: repeat(3, auto);
+      background-color: var(--light-cyan);
+      padding-bottom: 2rem;
+  }
+
+  footer .logo {
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+  }
+
+  footer .logo svg {
+      scale: 1.5;
+      fill: var(--Dark-desaturated-cyan);
+  }
+
+  footer ul {
+      display: flex;
+      padding-block: 1rem;
+      gap: 3rem;
+      justify-content: center;
+  }
+
+  .footer-nav .footer-nav-link {
+      color: var(--Dark-desaturated-cyan);
+      display: inline-block;
+      text-decoration: none;
+      font-weight: var(--fw-medium);
+  }
+
+  .footer-nav .footer-nav-link:hover {
+      color: var(--White);
+  }
+
+  .social {
+      margin-top: 2rem;
+      gap: .75rem;
+  }
+
+  .social a {
+      display: inline-block;
+      padding: .25rem;
+      border-radius: .25rem;
+      color: var(--Dark-desaturated-cyan);
+      font-size: 1.25rem;
+  }
+
+  .social a:hover {
+      color: var(--White);
+  }
+
+  @media only screen and (max-width: 376px) {
+      #down-arrow {
+          translate: -50% 20%;
+          scale: .8;
+      }
+
+      #About {
+          grid-template-columns: 1fr;
+      }
+
+      .description {
+          padding: 4.5rem 1.25rem;
+          text-align: center;
+      }
+
+      .picture.brand {
+          grid-row: 1 /1;
+      }
+
+      .description h2,
+      #Contact h2 {
+          font-size: 1.75rem;
+      }
+
+      .description p {
+          line-height: 1.5lh;
+      }
+
+      .description .learn-more {
+          margin-inline: auto;
+          font-size: .9rem;
+      }
+
+      #Services {
+          display: grid;
+          grid-template-columns: 1fr;
+      }
+
+      .graphic {
+          grid-column: 1 /1;
+          grid-row: 1/1;
+          color: var(--Dark-desaturated-cyan);
+      }
+
+      .photography {
+          grid-column: 1/1;
+          grid-row: 2/2;
+          color: var(--Dark-blue);
+      }
+
+      article.text {
+          padding: 3.5rem 1.25rem;
+      }
+
+      article.text p {
+          font-size: .85rem;
+          line-height: 1.25lh;
+      }
+
+      #Projects {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          padding: 1.25rem 1.25rem;
+      }
+
+      #Projects h2 {
+          grid-column: 1 / 1;
+          letter-spacing: 4px;
+          font-size: 1rem;
+          line-height: 1rem;
+          margin-block: 2rem;
+          text-transform: uppercase;
+
+      }
+
+      #Projects img {
+          border-radius: 50%;
+          width: 3.5rem;
+          margin: 0 auto;
+      }
+
+      #Projects p {
+          margin: 2rem 0;
+          line-height: 1.75rem;
+      }
+
+      #Projects .author {
+          font-weight: var(--fw-bold);
+          font-family: var(--ff-title);
+          display: block;
+          margin-block: .25rem;
+      }
+
+      #Projects .ocupation {
+          color: var(--Grayish-blue);
+          font-size: .8rem;
+      }
+
+      #gallery {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+      }
+
+      #Contact {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          padding: 1.25rem 1.25rem;
+          font-size: .9rem;
+      }
+
+      #Contact h2 {
+          text-align: center;
+          padding-block: 2rem;
+      }
+
+      #Contact form {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: space-around;
+          gap: 1.75rem;
+      }
+
+      #Contact [type="email"] {
+          min-width: 100%;
+          margin-top: .5rem;
+          font-family: var(--ff-body);
+          padding: .5rem;
+          font-weight: var(--fw-regular);
+      }
+
+      label {
+          display: block;
+          text-align: left;
+      }
+
+      [type="submit"] {
+          margin: 0 auto;
+      }
+
+      footer {
+          padding-bottom: 2rem;
+      }
+
+  }
